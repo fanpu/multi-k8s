@@ -10,10 +10,23 @@ metadata:
 spec:
   tls:
     - hosts:
-      - autolab-dev.tk
-      - www.autolab-dev.tk
+        - autolab-dev.tk
+        - www.autolab-dev.tk
+      secretName: k8s-multi-com
   rules:
-    - http:
+    - host: autolab-dev.tk
+      http:
+        paths:
+          - path: /?(.*)
+            backend:
+              serviceName: client-cluster-ip-service
+              servicePort: 3000
+          - path: /api/?(.*)
+            backend:
+              serviceName: server-cluster-ip-service
+              servicePort: 5000
+    - host: www.autolab-dev.tk
+      http:
         paths:
           - path: /?(.*)
             backend:
