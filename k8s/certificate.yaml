@@ -7,7 +7,7 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: k8s-multi.com
+  commonName: autolab-dev.com
   dnsNames:
     - autolab-dev.tk
     - www.autolab-dev.tk
