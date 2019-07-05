@@ -9,14 +9,14 @@ spec:
     kind: ClusterIssuer
   commonName: k8s-multi.com
   dnsNames:
-    - k8s-multi.com
-    - www.k8s-multi.com
+    - autolab-dev.tk
+    - www.autolab-dev.tk
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
-          - k8s-multi.com
-          - www.k8s-multi.com
+          - autolab-dev.tk
+          - www.autolab-dev.tk
 
 
